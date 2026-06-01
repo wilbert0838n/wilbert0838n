@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <a href="https://linkedin.com/in/wilbertnadar">
+  <a href="https://linkedin.com/in/wilbert-nadar">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   <a href="https://wilbertprojects.me">
     <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
   </a>
-  <a href="mailto:gamerwilbert7@gmail.com">
+  <a href="mailto:rohannadar88@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
