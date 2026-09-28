@@ -691,7 +691,7 @@ def stats(u):
     tiles = [
         (f'{cal["totalContributions"]:,}', "contributions", "last 12 months", BLUE),
         (f'{u["contributionsCollection"]["totalCommitContributions"]:,}', "commits", "last 12 months", GREEN),
-        (f"{cur}d", "current streak", f"longest: {longest}d", ORANGE),
+        (f"{cur}d", "current streak", f"longest: {longest}d", ORANGE) if cur else (f"{longest}d", "longest streak", "day streak record", ORANGE),
         (f'{repos["totalCount"]}', "public repos", f"{stars} stars earned", PURPLE),
     ]
     tw, gap = 270, 20
