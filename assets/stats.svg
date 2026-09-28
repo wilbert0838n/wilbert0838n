@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" fill="none">
+<style>
+.m{font-family:'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace} .s{font-family:'Inter','Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif}
+.tile{opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.grow{transform-origin:30.0px 0;transform:scaleX(0);animation:grow 1.6s cubic-bezier(.2,.8,.2,1) .5s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<defs><clipPath id="barclip"><rect x="30.0" y="206" width="1140.0" height="14" rx="7"/></clipPath></defs>
+<rect width="1200" height="330" rx="18" fill="#1a1b26"/>
+<rect x=".75" y=".75" width="1198.5" height="328.5" rx="17.5" stroke="#3b4261" stroke-width="1.5"/>
+<g class="tile" style="animation-delay:0.10s"><rect x="30.0" y="24" width="270" height="140" rx="14" fill="#24283b" stroke="#3b4261"/><circle cx="52.0" cy="48" r="4.5" fill="#7aa2f7"/><text x="64.0" y="53" class="m" font-size="13" fill="#565f89">contributions</text><text x="50.0" y="112" class="s" font-size="48" font-weight="800" fill="#7aa2f7">297</text><text x="52.0" y="144" class="m" font-size="12.5" fill="#565f89">last 12 months</text></g>
+<g class="tile" style="animation-delay:0.25s"><rect x="320.0" y="24" width="270" height="140" rx="14" fill="#24283b" stroke="#3b4261"/><circle cx="342.0" cy="48" r="4.5" fill="#9ece6a"/><text x="354.0" y="53" class="m" font-size="13" fill="#565f89">commits</text><text x="340.0" y="112" class="s" font-size="48" font-weight="800" fill="#9ece6a">290</text><text x="342.0" y="144" class="m" font-size="12.5" fill="#565f89">last 12 months</text></g>
+<g class="tile" style="animation-delay:0.40s"><rect x="610.0" y="24" width="270" height="140" rx="14" fill="#24283b" stroke="#3b4261"/><circle cx="632.0" cy="48" r="4.5" fill="#ff9e64"/><text x="644.0" y="53" class="m" font-size="13" fill="#565f89">current streak</text><text x="630.0" y="112" class="s" font-size="48" font-weight="800" fill="#ff9e64">0d</text><text x="632.0" y="144" class="m" font-size="12.5" fill="#565f89">longest: 5d</text></g>
+<g class="tile" style="animation-delay:0.55s"><rect x="900.0" y="24" width="270" height="140" rx="14" fill="#24283b" stroke="#3b4261"/><circle cx="922.0" cy="48" r="4.5" fill="#bb9af7"/><text x="934.0" y="53" class="m" font-size="13" fill="#565f89">public repos</text><text x="920.0" y="112" class="s" font-size="48" font-weight="800" fill="#bb9af7">4</text><text x="922.0" y="144" class="m" font-size="12.5" fill="#565f89">1 stars earned</text></g>
+<text x="30.0" y="194" class="m" font-size="13" fill="#565f89">languages across public repos</text>
+<rect x="30.0" y="206" width="1140.0" height="14" rx="7" fill="#2f3549"/>
+<g clip-path="url(#barclip)"><g class="grow"><rect x="30.0" y="206" width="576.4" height="14" fill="#7aa2f7"/><rect x="608.4" y="206" width="273.8" height="14" fill="#bb9af7"/><rect x="884.2" y="206" width="120.4" height="14" fill="#7dcfff"/><rect x="1006.6" y="206" width="100.5" height="14" fill="#9ece6a"/><rect x="1109.1" y="206" width="57.8" height="14" fill="#ff9e64"/><rect x="1168.9" y="206" width="1.0" height="14" fill="#f7768e"/></g></g>
+<circle cx="35.0" cy="250" r="5" fill="#7aa2f7"/><text x="46.0" y="255" class="m" font-size="13" fill="#c0caf5">TypeScript 50.7%</text>
+<circle cx="202.0" cy="250" r="5" fill="#bb9af7"/><text x="213.0" y="255" class="m" font-size="13" fill="#c0caf5">JavaScript 24.2%</text>
+<circle cx="368.9" cy="250" r="5" fill="#7dcfff"/><text x="379.9" y="255" class="m" font-size="13" fill="#c0caf5">Java 10.7%</text>
+<circle cx="487.5" cy="250" r="5" fill="#9ece6a"/><text x="498.5" y="255" class="m" font-size="13" fill="#c0caf5">Python 9.0%</text>
+<circle cx="614.2" cy="250" r="5" fill="#ff9e64"/><text x="625.2" y="255" class="m" font-size="13" fill="#c0caf5">CSS 5.2%</text>
+<circle cx="716.7" cy="250" r="5" fill="#f7768e"/><text x="727.7" y="255" class="m" font-size="13" fill="#c0caf5">Dockerfile 0.1%</text>
+<text x="1170.0" y="306" text-anchor="end" class="m" font-size="11.5" fill="#3b4261">auto-generated · 2026-09-28</text>
+</svg>
