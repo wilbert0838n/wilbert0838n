@@ -21,7 +21,7 @@
 <g class="in">
   <text x="26" y="45" class="i">0x05</text>
   <text x="84" y="46" class="t">on github</text>
-  <text x="1174" y="45" text-anchor="end" class="s">commits, streaks, snakes</text>
+  <text x="1174" y="45" text-anchor="end" class="s">refreshed daily by a GitHub Action</text>
 </g>
 
 </svg>

@@ -86,7 +86,7 @@ def hero():
         )
         role_svg += f'<text class="role r{i}" x="{W/2}" y="236" text-anchor="middle">[ {e(r)} ]</text>'
 
-    chips = ["TSEC Mumbai · CE '28", "CodeCell Core Team", "ICPC Regionalist", "600+ problems"]
+    chips = ["TSEC Mumbai · CE '28", "CodeCell Core Team", "ICPC '26 · W Coders", "600+ problems"]
     size = 14
     widths = [chip_w(c, size) for c in chips]
     gap = 14
@@ -493,7 +493,7 @@ def cp():
     tiles = [
         ("600+", "problems solved", "LC · CF · CodeChef · AtCoder", GREEN),
         ("#297", "CodeChef global rank", "global leaderboard", RED),
-        ("2×", "ICPC regionals", "Chennai 2025 · 2026", BLUE),
+        ("ICPC", "team W Coders", "Asia West · Chennai site '26", BLUE),
         ("600+", "players hosted", "8-week league on ComputeX", PURPLE),
     ]
     tw, gap = 282, 24
@@ -566,6 +566,245 @@ def footer():
     write("footer.svg", svg(W, H, body, style, defs))
 
 
+# ---------------------------------------------------------------- LINK BUTTONS
+def button(slug, label, sub, color, glyph):
+    W, H = 380, 76
+    style = f"""
+.m{{font-family:{MONO}}} .s{{font-family:{SANS}}}
+.ring{{transform-origin:40px 38px;animation:ring 2s ease-out infinite}}
+@keyframes ring{{from{{transform:scale(1);opacity:.7}}to{{transform:scale(2.2);opacity:0}}}}
+.arr{{animation:nudge 2.2s ease-in-out infinite}}
+@keyframes nudge{{50%{{transform:translate(3px,-3px)}}}}
+.sweep{{animation:sw 5s ease-in-out infinite}}
+@keyframes sw{{0%{{transform:translateX(-160px)}}60%,100%{{transform:translateX({W+160}px)}}}}
+"""
+    defs = f"""<clipPath id="bc"><rect width="{W}" height="{H}" rx="16"/></clipPath>
+<linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="{color}" stop-opacity="0"/>
+<stop offset=".5" stop-color="{color}" stop-opacity=".16"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient>"""
+    body = f"""
+<g clip-path="url(#bc)">
+  <rect width="{W}" height="{H}" fill="{BG}"/>
+  <rect class="sweep" x="0" y="0" width="140" height="{H}" fill="url(#sh)"/>
+</g>
+<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="15.25" stroke="{LINE}" stroke-width="1.5"/>
+<circle class="ring" cx="40" cy="38" r="17" fill="{color}" fill-opacity=".35"/>
+<circle cx="40" cy="38" r="17" fill="{color}" fill-opacity=".16" stroke="{color}" stroke-opacity=".7"/>
+<text x="40" y="44" text-anchor="middle" class="m" font-size="16" font-weight="700" fill="{color}">{e(glyph)}</text>
+<text x="72" y="35" class="s" font-size="18" font-weight="700" fill="{FG}">{e(label)}</text>
+<text x="72" y="56" class="m" font-size="12.5" fill="{DIM}">{e(sub)}</text>
+<g class="arr"><path d="M{W-44} 46 L{W-30} 32 M{W-40} 32 H{W-30} V42" stroke="{color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+"""
+    write(f"btn-{slug}.svg", svg(W, H, body, style, defs))
+
+
+# ---------------------------------------------------------------- STACK
+STACK = [
+    ("lang/", [("Java 21", ORANGE), ("C++", BLUE), ("TypeScript", CYAN), ("Python", YELLOW)]),
+    ("backend/", [("Spring Boot 3", GREEN), ("Spring Security", GREEN), ("RabbitMQ", ORANGE), ("FastAPI", CYAN)]),
+    ("frontend/", [("React 18", CYAN), ("Tailwind CSS", CYAN), ("Monaco Editor", BLUE)]),
+    ("infra/", [("Docker", BLUE), ("Linux", YELLOW), ("Nginx", GREEN), ("sysbox-runc", PURPLE), ("GCP", BLUE), ("Vercel", FG)]),
+    ("data/", [("PostgreSQL", BLUE), ("Supabase", GREEN)]),
+]
+
+
+def stack():
+    W = 1200
+    row_h = 58
+    top = 70
+    H = top + len(STACK) * row_h + 22
+    items = [
+        f'<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>',
+        f'<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="17.5" stroke="{LINE}" stroke-width="1.5"/>',
+        f'<text x="32" y="44" class="m" font-size="15" fill="{DIM}">$ <tspan fill="{FG}">tree</tspan> ~/toolbox <tspan fill="{DIM}">-L 2</tspan></text>',
+    ]
+    for r, (label, chips) in enumerate(STACK):
+        y = top + r * row_h
+        last = r == len(STACK) - 1
+        branch = "└──" if last else "├──"
+        g = [f'<text x="32" y="{y+27}" class="m" font-size="15" fill="{LINE}">{branch}</text>',
+             f'<text x="70" y="{y+27}" class="m" font-size="15" font-weight="700" fill="{BLUE}">{e(label)}</text>']
+        x = 200
+        for name, col in chips:
+            w = chip_w(name, 14) + 22
+            g.append(
+                f'<rect x="{x:.1f}" y="{y+6}" width="{w:.1f}" height="32" rx="10" fill="{BG2}" stroke="{LINE}"/>'
+                f'<circle cx="{x+16:.1f}" cy="{y+22}" r="4.5" fill="{col}"/>'
+                f'<text x="{x+30:.1f}" y="{y+27}" class="m" font-size="14" fill="{FG}">{e(name)}</text>'
+            )
+            x += w + 10
+        assert x < W - 20, (label, x)
+        items.append(f'<g class="row" style="animation-delay:{.15+r*.14:.2f}s">{"".join(g)}</g>')
+    style = f"""
+.m{{font-family:{MONO}}}
+.row{{opacity:0;animation:in .7s cubic-bezier(.2,.8,.2,1) forwards}}
+@keyframes in{{from{{opacity:0;transform:translateX(-14px)}}to{{opacity:1;transform:none}}}}
+"""
+    write("stack.svg", svg(W, H, "\n".join(items), style))
+
+
+# ---------------------------------------------------------------- GITHUB STATS (needs GITHUB_TOKEN)
+def fetch_github(user):
+    import json, os, urllib.request
+    token = os.environ.get("STATS_TOKEN")
+    if not token:
+        return None
+    q = """query($login:String!){user(login:$login){
+      followers{totalCount}
+      repositories(ownerAffiliations:OWNER,isFork:false,first:100,privacy:PUBLIC){totalCount
+        nodes{stargazerCount languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}}
+      contributionsCollection{totalCommitContributions totalPullRequestContributions
+        contributionCalendar{totalContributions weeks{contributionDays{date contributionCount weekday}}}}}}"""
+    req = urllib.request.Request(
+        "https://api.github.com/graphql",
+        data=json.dumps({"query": q, "variables": {"login": user}}).encode(),
+        headers={"Authorization": f"bearer {token}", "Content-Type": "application/json"},
+    )
+    data = json.load(urllib.request.urlopen(req, timeout=30))
+    if "errors" in data:
+        raise SystemExit(f"GraphQL error: {data['errors']}")
+    return data["data"]["user"]
+
+
+def streaks(days):
+    counts = [d["contributionCount"] for d in days]
+    longest = run = 0
+    for c in counts:
+        run = run + 1 if c else 0
+        longest = max(longest, run)
+    i = len(counts) - 1
+    if i >= 0 and counts[i] == 0:
+        i -= 1  # today not counted against the streak yet
+    cur = 0
+    while i >= 0 and counts[i]:
+        cur += 1
+        i -= 1
+    return cur, longest
+
+
+def stats(u):
+    W, H = 1200, 330
+    cal = u["contributionsCollection"]["contributionCalendar"]
+    days = [d for w in cal["weeks"] for d in w["contributionDays"]]
+    cur, longest = streaks(days)
+    repos = u["repositories"]
+    stars = sum(n["stargazerCount"] for n in repos["nodes"])
+    tiles = [
+        (f'{cal["totalContributions"]:,}', "contributions", "last 12 months", BLUE),
+        (f'{u["contributionsCollection"]["totalCommitContributions"]:,}', "commits", "last 12 months", GREEN),
+        (f"{cur}d", "current streak", f"longest: {longest}d", ORANGE),
+        (f'{repos["totalCount"]}', "public repos", f"{stars} stars earned", PURPLE),
+    ]
+    tw, gap = 270, 20
+    x0 = (W - (4 * tw + 3 * gap)) / 2
+    items = [f'<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>',
+             f'<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="17.5" stroke="{LINE}" stroke-width="1.5"/>']
+    for i, (big, lab, sub, col) in enumerate(tiles):
+        x = x0 + i * (tw + gap)
+        items.append(
+            f'<g class="tile" style="animation-delay:{.1+i*.15:.2f}s">'
+            f'<rect x="{x:.1f}" y="24" width="{tw}" height="140" rx="14" fill="{BG2}" stroke="{LINE}"/>'
+            f'<circle cx="{x+22:.1f}" cy="48" r="4.5" fill="{col}"/>'
+            f'<text x="{x+34:.1f}" y="53" class="m" font-size="13" fill="{DIM}">{e(lab)}</text>'
+            f'<text x="{x+20:.1f}" y="112" class="s" font-size="48" font-weight="800" fill="{col}">{e(big)}</text>'
+            f'<text x="{x+22:.1f}" y="144" class="m" font-size="12.5" fill="{DIM}">{e(sub)}</text></g>'
+        )
+    # languages across public repos
+    agg = {}
+    for n in repos["nodes"]:
+        for ed in n["languages"]["edges"]:
+            agg[ed["node"]["name"]] = agg.get(ed["node"]["name"], 0) + ed["size"]
+    top = sorted(agg.items(), key=lambda kv: -kv[1])[:6]
+    total = sum(v for _, v in top) or 1
+    pal = [BLUE, PURPLE, CYAN, GREEN, ORANGE, RED]
+    bx, bw, by = x0, W - 2 * x0, 206
+    items.append(f'<text x="{bx:.1f}" y="{by-12}" class="m" font-size="13" fill="{DIM}">languages across public repos</text>')
+    items.append(f'<rect x="{bx:.1f}" y="{by}" width="{bw:.1f}" height="14" rx="7" fill="{BG3}"/>')
+    segs, x = [], bx
+    for i, (name, v) in enumerate(top):
+        w = bw * v / total
+        segs.append(f'<rect x="{x:.1f}" y="{by}" width="{max(w-2,1):.1f}" height="14" fill="{pal[i]}"/>')
+        x += w
+    items.append(f'<g clip-path="url(#barclip)"><g class="grow">{"".join(segs)}</g></g>')
+    lx = bx
+    for i, (name, v) in enumerate(top):
+        label = f"{name} {v*100/total:.1f}%"
+        items.append(f'<circle cx="{lx+5:.1f}" cy="{by+44}" r="5" fill="{pal[i]}"/>'
+                     f'<text x="{lx+16:.1f}" y="{by+49}" class="m" font-size="13" fill="{FG}">{e(label)}</text>')
+        lx += chip_w(label, 13) + 14
+    items.append(f'<text x="{W-x0:.1f}" y="{H-24}" text-anchor="end" class="m" font-size="11.5" fill="{LINE}">auto-generated · {e(days[-1]["date"])}</text>')
+    defs = f'<clipPath id="barclip"><rect x="{bx:.1f}" y="{by}" width="{bw:.1f}" height="14" rx="7"/></clipPath>'
+    style = f"""
+.m{{font-family:{MONO}}} .s{{font-family:{SANS}}}
+.tile{{opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}}
+@keyframes up{{from{{opacity:0;transform:translateY(16px)}}to{{opacity:1;transform:none}}}}
+.grow{{transform-origin:{bx:.1f}px 0;transform:scaleX(0);animation:grow 1.6s cubic-bezier(.2,.8,.2,1) .5s forwards}}
+@keyframes grow{{to{{transform:scaleX(1)}}}}
+"""
+    write("stats.svg", svg(W, H, "\n".join(items), style, defs))
+
+
+def heatmap(u):
+    import datetime as dt
+    W = 1200
+    cal = u["contributionsCollection"]["contributionCalendar"]
+    weeks = cal["weeks"]
+    cell, gap = 16, 4
+    step = cell + gap
+    gx = (W - len(weeks) * step) / 2 + 20
+    gy = 84
+    H = gy + 7 * step + 64
+    counts = sorted(d["contributionCount"] for w in weeks for d in w["contributionDays"] if d["contributionCount"])
+    def q(p):
+        return counts[min(len(counts) - 1, int(p * len(counts)))] if counts else 1
+    t1, t2, t3 = q(.25), q(.5), q(.75)
+    levels = ["#232738", "#2e3f6e", "#3d59a1", BLUE, PURPLE]
+    def lvl(c):
+        if c == 0: return 0
+        if c <= t1: return 1
+        if c <= t2: return 2
+        if c <= t3: return 3
+        return 4
+    items = [f'<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>',
+             f'<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="17.5" stroke="{LINE}" stroke-width="1.5"/>',
+             f'<text x="32" y="44" class="m" font-size="15" fill="{FG}"><tspan fill="{BLUE}" font-weight="700">{cal["totalContributions"]:,}</tspan> contributions in the last year</text>']
+    last_month = None
+    for wi, w in enumerate(weeks):
+        x = gx + wi * step
+        first = dt.date.fromisoformat(w["contributionDays"][0]["date"])
+        if first.month != last_month and wi < len(weeks) - 2 and (wi > 0 or first.day <= 7):
+            items.append(f'<text x="{x:.1f}" y="{gy-10}" class="m" font-size="11" fill="{DIM}">{first.strftime("%b")}</text>')
+            last_month = first.month
+        elif wi == 0:
+            last_month = first.month
+        cells = "".join(
+            f'<rect x="{x:.1f}" y="{gy + d["weekday"]*step}" width="{cell}" height="{cell}" rx="4" fill="{levels[lvl(d["contributionCount"])]}"/>'
+            for d in w["contributionDays"]
+        )
+        items.append(f'<g class="col" style="animation-delay:{wi*0.03:.2f}s">{cells}</g>')
+    for wd, name in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
+        items.append(f'<text x="{gx-12:.1f}" y="{gy+wd*step+12}" text-anchor="end" class="m" font-size="11" fill="{DIM}">{name}</text>')
+    # sweeping scanner over the grid
+    items.append(f'<g clip-path="url(#gridclip)"><rect class="scan" x="{gx-140:.1f}" y="{gy-4}" width="120" height="{7*step+4}" fill="url(#scan)"/></g>')
+    lx = W - 32 - (5 * 20 + 90)
+    ly = H - 30
+    items.append(f'<text x="{lx:.1f}" y="{ly+12}" class="m" font-size="11" fill="{DIM}">less</text>')
+    for i, c in enumerate(levels):
+        items.append(f'<rect x="{lx+36+i*20:.1f}" y="{ly}" width="15" height="15" rx="4" fill="{c}"/>')
+    items.append(f'<text x="{lx+36+5*20+4:.1f}" y="{ly+12}" class="m" font-size="11" fill="{DIM}">more</text>')
+    gw = len(weeks) * step
+    defs = f"""<linearGradient id="scan" x1="0" x2="1"><stop offset="0" stop-color="{CYAN}" stop-opacity="0"/>
+<stop offset=".7" stop-color="{CYAN}" stop-opacity=".22"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/></linearGradient>
+<clipPath id="gridclip"><rect x="{gx-4:.1f}" y="{gy-4}" width="{gw+4:.1f}" height="{7*step+4}"/></clipPath>"""
+    style = f"""
+.m{{font-family:{MONO}}}
+.col{{opacity:0;animation:pop .5s ease-out forwards}}
+@keyframes pop{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1;transform:none}}}}
+.scan{{animation:scan 6s cubic-bezier(.5,0,.5,1) 2s infinite}}
+@keyframes scan{{0%{{transform:translateX(0)}}70%,100%{{transform:translateX({gw+160:.0f}px)}}}}
+"""
+    write("heatmap.svg", svg(W, H, "\n".join(items), style, defs))
+
+
 if __name__ == "__main__":
     hero()
     terminal()
@@ -573,7 +812,7 @@ if __name__ == "__main__":
     header("work", 2, "featured work", "things I shipped solo", PURPLE)
     header("stack", 3, "toolbox", "what I reach for", CYAN)
     header("cp", 4, "competitive programming", "handle: wilbert0838n", RED)
-    header("stats", 5, "on github", "commits, streaks, snakes", GREEN)
+    header("stats", 5, "on github", "refreshed daily by a GitHub Action", GREEN)
     card(
         "computex", "ComputeX", "competitive programming platform · built solo",
         "LIVE", GREEN,
@@ -595,5 +834,19 @@ if __name__ == "__main__":
         CYAN, BLUE,
     )
     pipeline()
+    stack()
     cp()
     footer()
+    button("portfolio", "ComputeX", "wilbertprojects.me", BLUE, ">_")
+    button("linkedin", "LinkedIn", "in/wilbert-nadar", PURPLE, "in")
+    button("mail", "Email", "rohannadar88@gmail.com", RED, "@")
+    button("cf", "Codeforces", "wilbert0838n", CYAN, "CF")
+    button("cc", "CodeChef", "wilbert0838n", ORANGE, "CC")
+    button("lc", "LeetCode", "wilbert0838n", YELLOW, "LC")
+    button("ac", "AtCoder", "wilbert0838n", FG, "AC")
+    user = fetch_github("wilbert0838n")
+    if user:
+        stats(user)
+        heatmap(user)
+    else:
+        print("STATS_TOKEN not set: keeping existing stats.svg / heatmap.svg")
