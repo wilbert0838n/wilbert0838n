@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" fill="none">
+<style>
+.m{font-family:'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace} .s{font-family:'Inter','Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif}
+.edge{stroke:#565f89;stroke-width:1.6;stroke-dasharray:4 5;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-9}}
+@keyframes n0{0%,0.000%,10.000%,100%{stroke:#3b4261;stroke-width:1.5}0.000%,4.286%{stroke:#7aa2f7;stroke-width:2.5}}.n0{animation:n0 7.0s linear infinite}@keyframes h0{0%,0.000%,10.000%,100%{opacity:0}0.000%,4.286%{opacity:.5}}.h0{animation:h0 7.0s linear infinite}@keyframes n1{0%,10.600%,25.600%,100%{stroke:#3b4261;stroke-width:1.5}15.600%,19.886%{stroke:#9ece6a;stroke-width:2.5}}.n1{animation:n1 7.0s linear infinite}@keyframes h1{0%,10.600%,25.600%,100%{opacity:0}15.600%,19.886%{opacity:.5}}.h1{animation:h1 7.0s linear infinite}@keyframes n2{0%,26.200%,41.200%,100%{stroke:#3b4261;stroke-width:1.5}31.200%,35.486%{stroke:#ff9e64;stroke-width:2.5}}.n2{animation:n2 7.0s linear infinite}@keyframes h2{0%,26.200%,41.200%,100%{opacity:0}31.200%,35.486%{opacity:.5}}.h2{animation:h2 7.0s linear infinite}@keyframes n3{0%,41.800%,56.800%,100%{stroke:#3b4261;stroke-width:1.5}46.800%,51.086%{stroke:#7dcfff;stroke-width:2.5}}.n3{animation:n3 7.0s linear infinite}@keyframes h3{0%,41.800%,56.800%,100%{opacity:0}46.800%,51.086%{opacity:.5}}.h3{animation:h3 7.0s linear infinite}@keyframes n4{0%,57.400%,72.400%,100%{stroke:#3b4261;stroke-width:1.5}62.400%,66.686%{stroke:#f7768e;stroke-width:2.5}}.n4{animation:n4 7.0s linear infinite}@keyframes h4{0%,57.400%,72.400%,100%{opacity:0}62.400%,66.686%{opacity:.5}}.h4{animation:h4 7.0s linear infinite}@keyframes n5{0%,73.000%,88.000%,100%{stroke:#3b4261;stroke-width:1.5}78.000%,82.286%{stroke:#bb9af7;stroke-width:2.5}}.n5{animation:n5 7.0s linear infinite}@keyframes h5{0%,73.000%,88.000%,100%{opacity:0}78.000%,82.286%{opacity:.5}}.h5{animation:h5 7.0s linear infinite}.prog{transform-origin:172px 0;animation:prog 7.0s linear infinite}@keyframes prog{0%{transform:scaleX(0);fill:#7aa2f7}78.0%{transform:scaleX(1);fill:#7aa2f7}79.0%,97%{transform:scaleX(1);fill:#9ece6a}100%{transform:scaleX(0);fill:#9ece6a}}@keyframes v0{0%,0.00%{opacity:0}1.00%,18.50%{opacity:1}20.00%,100%{opacity:0}}.v0{opacity:0;animation:v0 7.0s linear infinite}@keyframes v1{0%,19.99%{opacity:0}21.00%,60.50%{opacity:1}62.00%,100%{opacity:0}}.v1{opacity:0;animation:v1 7.0s linear infinite}@keyframes v2{0%,61.99%{opacity:0}63.00%,76.50%{opacity:1}78.00%,100%{opacity:0}}.v2{opacity:0;animation:v2 7.0s linear infinite}@keyframes v3{0%,77.99%{opacity:0}79.00%,98.50%{opacity:1}100.00%,100%{opacity:0}}.v3{opacity:0;animation:v3 7.0s linear infinite}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<defs><filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+<rect width="1200" height="360" rx="18" fill="#1a1b26"/>
+<rect x=".75" y=".75" width="1198.5" height="358.5" rx="17.5" stroke="#3b4261" stroke-width="1.5"/>
+<text x="32" y="48" class="m" font-size="15" fill="#565f89">// life of a submission on <tspan fill="#7aa2f7" font-weight="700">ComputeX</tspan></text>
+<text x="1168" y="48" text-anchor="end" class="m" font-size="13" fill="#565f89">wilbertprojects.me</text>
+<line x1="198.0" y1="150.0" x2="234.0" y2="150.0" class="edge"/>
+<path d="M227.0 145.0 L233.0 150.0 L227.0 155.0" stroke="#565f89" stroke-width="1.6" fill="none"/>
+<line x1="390.0" y1="150.0" x2="426.0" y2="150.0" class="edge"/>
+<path d="M419.0 145.0 L425.0 150.0 L419.0 155.0" stroke="#565f89" stroke-width="1.6" fill="none"/>
+<line x1="582.0" y1="150.0" x2="618.0" y2="150.0" class="edge"/>
+<path d="M611.0 145.0 L617.0 150.0 L611.0 155.0" stroke="#565f89" stroke-width="1.6" fill="none"/>
+<line x1="774.0" y1="150.0" x2="810.0" y2="150.0" class="edge"/>
+<path d="M803.0 145.0 L809.0 150.0 L803.0 155.0" stroke="#565f89" stroke-width="1.6" fill="none"/>
+<line x1="966.0" y1="150.0" x2="1002.0" y2="150.0" class="edge"/>
+<path d="M995.0 145.0 L1001.0 150.0 L995.0 155.0" stroke="#565f89" stroke-width="1.6" fill="none"/>
+<rect class="h0" x="38.0" y="100" width="164" height="100" rx="16" fill="#7aa2f7" filter="url(#bl)" opacity="0"/>
+<rect class="n0" x="42.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="60.0" cy="126" r="4" fill="#7aa2f7"/>
+<text x="72.0" y="131" class="m" font-size="11" fill="#565f89">01</text>
+<text x="120.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">Monaco</text>
+<text x="120.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">React 18 editor</text>
+<rect class="h1" x="230.0" y="100" width="164" height="100" rx="16" fill="#9ece6a" filter="url(#bl)" opacity="0"/>
+<rect class="n1" x="234.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="252.0" cy="126" r="4" fill="#9ece6a"/>
+<text x="264.0" y="131" class="m" font-size="11" fill="#565f89">02</text>
+<text x="312.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">Spring API</text>
+<text x="312.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">Boot 3 · Java 21</text>
+<rect class="h2" x="422.0" y="100" width="164" height="100" rx="16" fill="#ff9e64" filter="url(#bl)" opacity="0"/>
+<rect class="n2" x="426.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="444.0" cy="126" r="4" fill="#ff9e64"/>
+<text x="456.0" y="131" class="m" font-size="11" fill="#565f89">03</text>
+<text x="504.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">RabbitMQ</text>
+<text x="504.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">async job queue</text>
+<rect class="h3" x="614.0" y="100" width="164" height="100" rx="16" fill="#7dcfff" filter="url(#bl)" opacity="0"/>
+<rect class="n3" x="618.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="636.0" cy="126" r="4" fill="#7dcfff"/>
+<text x="648.0" y="131" class="m" font-size="11" fill="#565f89">04</text>
+<text x="696.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">Warm Pool</text>
+<text x="696.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">prewarmed containers</text>
+<rect class="h4" x="806.0" y="100" width="164" height="100" rx="16" fill="#f7768e" filter="url(#bl)" opacity="0"/>
+<rect class="n4" x="810.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="828.0" cy="126" r="4" fill="#f7768e"/>
+<text x="840.0" y="131" class="m" font-size="11" fill="#565f89">05</text>
+<text x="888.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">Sandbox</text>
+<text x="888.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">Docker + seccomp BPF</text>
+<rect class="h5" x="998.0" y="100" width="164" height="100" rx="16" fill="#bb9af7" filter="url(#bl)" opacity="0"/>
+<rect class="n5" x="1002.0" y="104" width="156" height="92" rx="13" fill="#24283b" stroke="#3b4261" stroke-width="1.5"/>
+<circle cx="1020.0" cy="126" r="4" fill="#bb9af7"/>
+<text x="1032.0" y="131" class="m" font-size="11" fill="#565f89">06</text>
+<text x="1080.0" y="160" text-anchor="middle" class="s" font-size="18" font-weight="700" fill="#c0caf5">Checker</text>
+<text x="1080.0" y="180" text-anchor="middle" class="m" font-size="11" fill="#565f89">validator · spj</text>
+<line x1="120.0" y1="218" x2="1080.0" y2="218" stroke="#3b4261" stroke-width="2" stroke-linecap="round"/>
+<line x1="120.0" y1="196" x2="120.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<line x1="312.0" y1="196" x2="312.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<line x1="504.0" y1="196" x2="504.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<line x1="696.0" y1="196" x2="696.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<line x1="888.0" y1="196" x2="888.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<line x1="1080.0" y1="196" x2="1080.0" y2="218" stroke="#3b4261" stroke-width="2"/>
+<g><circle r="14" fill="#7dcfff" opacity=".25" filter="url(#bl)"/><circle r="5" fill="#fff"/><animateMotion dur="7.0s" repeatCount="indefinite" keyTimes="0;0.780;1" keyPoints="0;1;1" calcMode="linear" path="M120.0 218 L1080.0 218"/><animate attributeName="opacity" dur="7.0s" repeatCount="indefinite" keyTimes="0;.03;0.780;0.820;1" values="0;1;1;0;0"/></g>
+<rect x="150" y="262" width="900" height="62" rx="12" fill="#24283b" stroke="#3b4261"/>
+<text x="172" y="288" class="m" font-size="13" fill="#565f89">submission <tspan fill="#c0caf5">#1337</tspan> · <tspan fill="#c0caf5">C++17</tspan> · problem <tspan fill="#c0caf5">B</tspan></text>
+<rect x="172" y="302" width="670" height="8" rx="4" fill="#2f3549"/>
+<rect class="prog" x="172" y="302" width="670" height="8" rx="4" fill="#7aa2f7"/>
+<text class="v0" x="1028" y="300" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#e0af68">compiling…</text>
+<text class="v1" x="1028" y="300" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#7aa2f7">running tests…</text>
+<text class="v2" x="1028" y="300" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#bb9af7">checking output…</text>
+<text class="v3" x="1028" y="300" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" font-weight="700" fill="#9ece6a">✔ ACCEPTED  0.12s</text>
+</svg>

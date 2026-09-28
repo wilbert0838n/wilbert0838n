@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="330" viewBox="0 0 590 330" fill="none">
+<style>
+.m{font-family:'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace} .s{font-family:'Inter','Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif}
+.b{opacity:0;animation:in .6s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes in{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+.ring{transform-origin:498px 40px;animation:ring 1.8s ease-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.8}to{transform:scale(3.2);opacity:0}}
+.glow{animation:gl 8s ease-in-out infinite alternate}
+@keyframes gl{to{transform:translate(-120px,60px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<defs>
+<linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#7aa2f7"/><stop offset=".35" stop-color="#3b4261"/>
+  <stop offset=".65" stop-color="#3b4261"/><stop offset="1" stop-color="#bb9af7"/>
+  <animateTransform attributeName="gradientTransform" type="rotate" from="0 .5 .5" to="360 .5 .5" dur="7s" repeatCount="indefinite"/>
+</linearGradient>
+<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7aa2f7" stop-opacity=".35"/><stop offset="1" stop-color="#7aa2f7" stop-opacity="0"/></radialGradient>
+<clipPath id="cc"><rect width="590" height="330" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#cc)"><rect width="590" height="330" fill="#1a1b26"/>
+<circle class="glow" cx="550" cy="30" r="170" fill="url(#gl)"/></g>
+<rect x="1" y="1" width="588" height="328" rx="17" stroke="url(#bd)" stroke-width="2"/>
+<rect x="494" y="26" width="68" height="28" rx="14" fill="#9ece6a" fill-opacity=".12" stroke="#9ece6a" stroke-opacity=".5"/>
+<circle class="ring" cx="510" cy="40" r="4" fill="#9ece6a"/>
+<circle cx="510" cy="40" r="4" fill="#9ece6a"/>
+<text x="522" y="44.5" class="m" font-size="12" font-weight="700" fill="#9ece6a">LIVE</text>
+<text x="30" y="58" class="s" font-size="34" font-weight="800" fill="#c0caf5">ComputeX</text>
+<text x="30" y="86" class="m" font-size="13.5" fill="#565f89">competitive programming platform · built solo</text>
+<g class="b" style="animation-delay:0.25s"><text x="30" y="128" class="m" font-size="15" fill="#7aa2f7">▹</text><text x="52" y="128" class="m" font-size="15" fill="#c0caf5">seccomp-BPF hardened Docker sandboxes</text></g>
+<g class="b" style="animation-delay:0.43s"><text x="30" y="160" class="m" font-size="15" fill="#7aa2f7">▹</text><text x="52" y="160" class="m" font-size="15" fill="#c0caf5">prewarmed container pool, low-latency judging</text></g>
+<g class="b" style="animation-delay:0.61s"><text x="30" y="192" class="m" font-size="15" fill="#7aa2f7">▹</text><text x="52" y="192" class="m" font-size="15" fill="#c0caf5">RabbitMQ async submission queue</text></g>
+<g class="b" style="animation-delay:0.79s"><text x="30" y="224" class="m" font-size="15" fill="#7aa2f7">▹</text><text x="52" y="224" class="m" font-size="15" fill="#c0caf5">ran an 8-week national league, 600+ players</text></g>
+<rect x="30.0" y="274" width="76.1" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="68.0" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">Java 21</text>
+<rect x="114.1" y="274" width="120.7" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="174.4" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">Spring Boot 3</text>
+<rect x="242.8" y="274" width="61.2" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="273.4" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">React</text>
+<rect x="312.0" y="274" width="68.6" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="346.3" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">Docker</text>
+<rect x="388.6" y="274" width="83.5" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="430.4" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">RabbitMQ</text>
+<rect x="480.2" y="274" width="83.5" height="28" rx="8" fill="#24283b" stroke="#3b4261"/><text x="521.9" y="292.5" text-anchor="middle" class="m" font-size="12" fill="#7dcfff">Postgres</text>
+</svg>
