@@ -59,12 +59,15 @@
 
 <div align="center">
 <br/>
-<img src="https://github-readme-stats.vercel.app/api?username=wilbert0838n&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&bg_color=1a1b26&border_radius=16" height="170"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbert0838n&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b26&border_radius=16&langs_count=6" height="170"/>
+<img src="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/main/profile-summary-card-output/tokyonight/0-profile-details.svg" width="100%" alt="contribution overview"/>
+<br/><br/>
+<img src="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/main/profile-summary-card-output/tokyonight/3-stats.svg" width="49%" alt="github stats"/>
+<img src="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/main/profile-summary-card-output/tokyonight/4-productive-time.svg" width="49%" alt="commits by hour"/>
+<br/><br/>
+<img src="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="49%" alt="repos per language"/>
+<img src="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%" alt="most committed language"/>
 <br/><br/>
 <img src="https://streak-stats.demolab.com?user=wilbert0838n&theme=tokyonight&hide_border=true&background=1a1b26&border_radius=16" width="100%"/>
-<br/><br/>
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=wilbert0838n&theme=tokyo-night&hide_border=true&bg_color=1a1b26&area=true&radius=16" width="100%"/>
 <br/><br/>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wilbert0838n/wilbert0838n/output/github-contribution-grid-snake-dark.svg"/>

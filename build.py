@@ -151,26 +151,31 @@ def hero():
 
 # ---------------------------------------------------------------- SECTION HEADERS
 def header(slug, idx, title, sub, color):
-    W, H = 1200, 78
+    W, H = 1200, 76
     style = f"""
-.t{{font-family:{SANS};font-weight:800;font-size:30px;fill:{FG}}}
-.i{{font-family:{MONO};font-size:16px;font-weight:700;fill:{color}}}
-.s{{font-family:{MONO};font-size:14px;fill:{DIM}}}
+.t{{font-family:{SANS};font-weight:800;font-size:26px;fill:{FG}}}
+.i{{font-family:{MONO};font-size:15px;font-weight:700;fill:{color}}}
+.s{{font-family:{MONO};font-size:13px;fill:{DIM}}}
 .sweep{{animation:sw 4.5s cubic-bezier(.6,0,.4,1) infinite}}
 @keyframes sw{{from{{transform:translateX(-260px)}}to{{transform:translateX({W+40}px)}}}}
 .in{{opacity:0;animation:in .8s ease forwards}}
 @keyframes in{{from{{opacity:0;transform:translateX(-16px)}}to{{opacity:1;transform:none}}}}
 """
     defs = f"""<linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="{color}" stop-opacity="0"/>
-<stop offset=".5" stop-color="{color}"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient>"""
+<stop offset=".5" stop-color="{color}"/><stop offset="1" stop-color="{color}" stop-opacity="0"/></linearGradient>
+<clipPath id="hc"><rect width="{W}" height="{H}" rx="14"/></clipPath>"""
     body = f"""
-<g class="in">
-  <text x="4" y="40" class="i">0x{idx:02d}</text>
-  <text x="62" y="41" class="t">{e(title)}</text>
-  <text x="{W-4}" y="40" text-anchor="end" class="s">{e(sub)}</text>
+<g clip-path="url(#hc)">
+  <rect width="{W}" height="{H}" fill="{BG}"/>
+  <rect x="0" y="{H-3}" width="{W}" height="3" fill="{LINE}"/>
+  <rect class="sweep" x="0" y="{H-3}" width="240" height="3" fill="url(#sg)"/>
 </g>
-<rect x="0" y="62" width="{W}" height="2" rx="1" fill="{LINE}"/>
-<rect class="sweep" x="0" y="61" width="240" height="4" rx="2" fill="url(#sg)"/>
+<rect x=".75" y=".75" width="{W-1.5}" height="{H-1.5}" rx="13.25" stroke="{LINE}" stroke-width="1.5"/>
+<g class="in">
+  <text x="26" y="45" class="i">0x{idx:02d}</text>
+  <text x="84" y="46" class="t">{e(title)}</text>
+  <text x="{W-26}" y="45" text-anchor="end" class="s">{e(sub)}</text>
+</g>
 """
     write(f"h-{slug}.svg", svg(W, H, body, style, defs))
 
